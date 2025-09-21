@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Press Start 2P', monospace;
+    overflow: hidden;
+  }
+  #lyrics {
+    color: white;
+    font-size: 2em;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div id="lyrics"></div>
+<script>
+const lyrics = [
+  "Có","phải","vì","anh","Vẫn","thường","vố","ý","Chẳng","suy,","vài","lần","khiến","em","u","sầu",
+  "Có","phải","vì","anh","Trót","vài","câu","nói","Chạm","vào","nơi","niềm","đau","mà","người","luôn","chôn","giấu",
+  "Vài","câu","nói","có","khiến","người","thay","đổi?","Có","khiến","bờ","môi","ấm","êm?","Nay","chỉ","còn","trong","nỗi","nhớ"
+];
+
+let index = 0;
+const lyricsDiv = document.getElementById("lyrics");
+
+function showNextWord() {
+  if(index < lyrics.length) {
+    lyricsDiv.textContent = lyrics[index];
+    index++;
+    setTimeout(showNextWord, 500); // 0.5s mỗi chữ, bạn chỉnh nhịp tùy ý
+  }
+}
+
+showNextWord();
+</script>
+</body>
+</html>
